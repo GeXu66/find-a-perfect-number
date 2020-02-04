@@ -1,0 +1,57 @@
+    #include<stdio.h>
+    int main()
+    {
+        printf("Number:190320517\n");
+        printf("program_3_2\n");
+        int number;
+        printf("please input a number:");
+        scanf("%d",&number);
+        if(judge(number))
+        {
+            int c,d,e,f,g;
+            printf("1+");
+            for(c=2;c<number;c++)
+            {
+                d=number%c;
+                if(d==0)
+                {
+                    printf("%d+",c);
+                    e=number/c;
+                    break;
+                }
+            }
+            for(f=c+1;f<e;f++)
+            {
+                g=number%f;
+                if(g==0)
+                {
+                    printf("%d+",f);
+                }
+            }
+            printf("%d",e);
+        }
+        else
+        {
+            printf("it is not a perfect number\n");
+        }
+        return 0;
+    }
+    int judge(int n)
+    {
+        int ret=0;
+        int m,a,sum;
+        sum=0;
+        for(m=1;m<n;m++)
+        {
+            a=n%m;
+            if(a==0)
+            {
+                sum=sum+m;
+            }
+        }
+        if(sum==n)
+        {
+            ret=1;
+        }
+        return ret;
+    }
